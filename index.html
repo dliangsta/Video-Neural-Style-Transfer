@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title> Style Transfer </title>
+    <!-- Bootstrap Core CSS -->
+    <link href="web/external/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="web/external/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <!-- Plugin CSS -->
+    <link href="web/external/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <!-- Theme CSS -->
+    <link href="web/css/creative.min.css" rel="stylesheet">
+</head>
+
+<body id="page-top">
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">STYLE TRANSFER</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#video-results">Video Results</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#image-results">Image Results</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <header>
+        <div class="header-content">
+            <div class="header-content-inner">
+                <h1 id="homeHeading">Style Transfer</h1>
+                <p> <a href="https://github.com/EvanFredHernandez" target="blank"> Evan Hernandez </a> and <a href="https://github.com/dliangsta" target="blank"> David Liang </a> </p>
+            </div>
+        </div>
+    </header>
+    <section class="bg-primary" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">A TensorFlow CNN Implementation</h2>
+                    <hr class="light">
+                </div>
+            </div>
+            </br>
+            </br>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2 class="section-heading">Summary</h2>
+                    <p class="text-faded"> We used a pre-trained 19-layer convolutional neural network to implement the method proposed by <a href="https://arxiv.org/pdf/1508.06576v2.pdf" target="blank">Gatys et al</a> to transfer the style of one image onto the content of
+                        another. We then extended the project to allow for video style transfer, as described by <a href="https://arxiv.org/pdf/1604.08610v2.pdf" target="blank">Ruder et al.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="bg-primary" id="video-results">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading"> Video Results </h2>
+                    <hr class="light">
+                </div>
+            </div>
+            <div class="row no-gutter popup-gallery">
+                <div class="col-lg-4 col-sm-6">
+                    <a href="web/img/totoro.gif" class="portfolio-box">
+                        <img src="web/img/totoro.gif" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Original Video
+                                </div>
+                                <div class="project-name">
+                                    Totoro
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="web/img/totoro_bad.gif" class="portfolio-box">
+                        <img src="web/img/totoro_bad.gif" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Stylized Video without Temporal Consistency
+                                </div>
+                                <div class="project-name">
+                                    Totoro
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="web/img/totoro_good.gif" class="portfolio-box">
+                        <img src="web/img/totoro_good.gif" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Stylized Video
+                                </div>
+                                <div class="project-name">
+                                    Totoro
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-primary" id="image-results">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading"> Image Results </h2>
+                    <hr class="light">
+                    <h5 class="section-heading"> Click on each stylized image to view the stylization process. </h5>
+                </div>
+            </div>
+            <div class="row no-gutter popup-gallery">
+                <a href="web/img/0_bridge.jpg" class="portfolio-box">
+                    <img src="web/img/0_bridge.jpg" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Original
+                            </div>
+                            <div class="project-name">
+                                Harbor Bridge
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        </br>
+        <div class="container-fluid">
+            <div class="row no-gutter popup-gallery">
+                <div class="col-lg-4 col-sm-6">
+                    <a href="web/img/1_style.jpg" class="portfolio-box">
+                        <img src="web/img/1_style.jpg" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Style 1
+                                </div>
+                                <div class="project-name">
+                                    Van Gogh: The Starry Night
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="web/img/2_style.jpg" class="portfolio-box">
+                        <img src="web/img/2_style.jpg" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Style 2
+                                </div>
+                                <div class="project-name">
+                                    Wassily Kandinsky: Composition VII
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="web/img/3_style.jpg" class="portfolio-box">
+                        <img src="web/img/3_style.jpg" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Style 3
+                                </div>
+                                <div class="project-name">
+                                    Pablo Picasso: Femme nue assise
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="web/img/1_bridge.gif" class="portfolio-box">
+                        <img src="web/img/1_bridge.jpg" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Stylized
+                                </div>
+                                <div class="project-name">
+                                    Harbor Bridge + The Starry Night
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="web/img/2_bridge.gif" class="portfolio-box">
+                        <img src="web/img/2_bridge.jpg" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Stylized
+                                </div>
+                                <div class="project-name">
+                                    Harbor Bridge + Composition VII
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="web/img/3_bridge.gif" class="portfolio-box">
+                        <img src="web/img/3_bridge.jpg" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Stylized
+                                </div>
+                                <div class="project-name">
+                                    Harbor Bridge + Femme neu assise
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="text-center bg-primary">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="https://github.com/dliangsta/Style-Transfer" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw fa-col"></i> <span class="network-name"> Github </span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- jQuery -->
+        <script src="web/external/jquery/jquery.min.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="web/external/bootstrap/js/bootstrap.min.js"></script>
+        <!-- Plugin JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+        <script src="web/external/scrollreveal/scrollreveal.min.js"></script>
+        <script src="web/external/magnific-popup/jquery.magnific-popup.min.js"></script>
+        <!-- Theme JavaScript -->
+        <script src="web/js/creative.js"></script>
+</body>
+
+</html>
