@@ -1,77 +1,28 @@
-# neural-style
+# Video Neural Style Transfer
+This is an algorithm that extends neural style transfer to videos. 
 
-An implementation of [neural style][paper] in TensorFlow.
+Webpage: https://dliangsta.github.io/Video-Neural-Style-Transfer/ </br>
+Results: https://github.com/dliangsta/Video-Neural-Style-Transfer/tree/master/results </br>
+Style transfer code: https://github.com/anishathalye/neural-style </br>
 
-This implementation is a lot simpler than a lot of the other ones out there,
-thanks to TensorFlow's really nice API and [automatic differentiation][ad].
+### Usage
 
-TensorFlow doesn't support [L-BFGS][l-bfgs] (which is what the original authors
-used), so we use [Adam][adam]. This may require a little bit more
-hyperparameter tuning to get nice results.
+```
+usage: python3 src/main.py [-h] [--content_type CONTENT_TYPE]
+               [--content_path CONTENT_PATH] [--style_path STYLE_PATH]
+               [--vgg_path VGG_PATH] [--frame_input_path FRAME_INPUT_PATH]
+               [--frame_output_path FRAME_OUTPUT_PATH]
+               [--output_path OUTPUT_PATH]
+               [--epoch_input_path EPOCH_INPUT_PATH]
+               [--epoch_output_path EPOCH_OUTPUT_PATH]
+               [--initial_path INITIAL_PATH] [--initial_epoch INITIAL_EPOCH]
+               [--update_interval UPDATE_INTERVAL]
+               [--learning_rate LEARNING_RATE] [--max_epochs MAX_EPOCHS]
+               [--content_weight CONTENT_WEIGHT] [--style_weight STYLE_WEIGHT]
+               [--temporal_weight TEMPORAL_WEIGHT]
+               [--block_length BLOCK_LENGTH]
+```
 
-**See [here][lengstrom-fast-style-transfer] for an implementation of [fast
-(feed-forward) neural style][fast-neural-style] in TensorFlow.**
+### Requirements
 
-## Running
-
-`python neural_style.py --content <content file> --styles <style file> --output <output file>`
-
-(run `python neural_style.py --help` to see a list of all options)
-
-## Example 1
-
-Running it for 500-2000 iterations seems to produce nice results. With certain
-images or output sizes, you might need some hyperparameter tuning (especially
-`--content-weight`, `--style-weight`, and `--learning-rate`).
-
-The following example was run for 1000 iterations to produce the result (with
-default parameters):
-
-![output](examples/1-output.jpg)
-
-These were the input images used (me sleeping at a hackathon and Starry Night):
-
-![input-content](examples/1-content.jpg)
-
-![input-style](examples/1-style.jpg)
-
-## Example 2
-
-The following example demonstrates style blending, and was run for 1000
-iterations to produce the result (with style blend weight parameters 0.8 and
-0.2):
-
-![output](examples/2-output.jpg)
-
-The content input image was a picture of the Stata Center at MIT:
-
-![input-content](examples/2-content.jpg)
-
-The style input images were Picasso's "Dora Maar" and Starry Night, with the
-Picasso image having a style blend weight of 0.8 and Starry Night having a
-style blend weight of 0.2:
-
-![input-style](examples/2-style1.jpg)
-![input-style](examples/2-style2.jpg)
-
-## Requirements
-
-* [TensorFlow](https://www.tensorflow.org/versions/master/get_started/os_setup.html#download-and-setup)
-* [NumPy](https://github.com/numpy/numpy/blob/master/INSTALL.rst.txt)
-* [SciPy](https://github.com/scipy/scipy/blob/master/INSTALL.rst.txt)
-* [Pillow](http://pillow.readthedocs.io/en/3.3.x/installation.html#installation)
-* [Pre-trained VGG network][net] (MD5 `8ee3263992981a1d26e73b3ca028a123`) - put it in the top level of this repository
-
-## License
-
-Copyright (c) 2015-2016 Anish Athalye. Released under GPLv3. See
-[LICENSE.txt][license] for details.
-
-[net]: http://www.vlfeat.org/matconvnet/models/beta16/imagenet-vgg-verydeep-19.mat
-[paper]: http://arxiv.org/pdf/1508.06576v2.pdf
-[l-bfgs]: https://en.wikipedia.org/wiki/Limited-memory_BFGS
-[adam]: http://arxiv.org/abs/1412.6980
-[ad]: https://en.wikipedia.org/wiki/Automatic_differentiation
-[lengstrom-fast-style-transfer]: https://github.com/lengstrom/fast-style-transfer
-[fast-neural-style]: https://arxiv.org/pdf/1603.08155v1.pdf
-[license]: LICENSE.txt
+tensorflow, python3, scipy, numpy, Pillow, opencv
